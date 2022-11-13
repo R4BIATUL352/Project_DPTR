@@ -32,8 +32,8 @@
             </div>
             <ul class="sub-menu">
                 <li><a href="#" class="link_name">Tambah Dokumen</a></li>
-                <li><a href="{{route('pemanfaatan')}}">Pemanfaatan</a></li>
-                <li><a href="{{route('pengawasan')}}">Pengawasan</a></li>
+                <li><a href="{{route('Create-Pengawasan')}}">Pemanfaatan</a></li>
+                <li><a href="{{route('Data-Pengawasan')}}">Pengawasan</a></li>
             </ul>
         </li>
         <li>

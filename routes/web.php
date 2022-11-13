@@ -40,27 +40,27 @@ Route::group(['middleware' => 'web'], function () {
     Route::post('register/action', [RegisterController::class, 'actionregister'])->name('actionregister');
     
     //menampilkan form input data pemanfaatan
-Route::get('/form-dpemanfaatan', [DpemanfaatanController::class, 'create'])->name('form-dpemanfaatan');
+    Route::get('/form-dpemanfaatan', [DpemanfaatanController::class, 'create'])->name('form-dpemanfaatan');
 
-//nampilkan data hasil inputan ke tabel
-Route::post('/simpan-dpemanfaatan', [DpemanfaatanController::class, 'store'])->name('simpan-dpemanfaatan');
+    //nampilkan data hasil inputan ke tabel
+    Route::post('/simpan-dpemanfaatan', [DpemanfaatanController::class, 'store'])->name('simpan-dpemanfaatan');
 
-//memanggil edit
-Route::get('edit-pemanfaatan/{id}',[DpemanfaatanController::class, 'edit'])->name('edit-pemanfaatan');
+    //memanggil edit
+    Route::get('edit-pemanfaatan/{id}',[DpemanfaatanController::class, 'edit'])->name('edit-pemanfaatan');
 
-//memanggil update
-Route::post('/updatepemanfaatan',[DpemanfaatanController::class, 'update'])->name('updatepemanfaatan');
+    //memanggil update
+    Route::post('/updatepemanfaatan',[DpemanfaatanController::class, 'update'])->name('updatepemanfaatan');
 
-// memanggil hapus
-Route::get('/hapus-pemanfaatan/{id}',[DpemanfaatanController::class, 'delete'])->name('hapus-pemanfaatan');
+    // memanggil hapus
+    Route::get('/hapus-pemanfaatan/{id}',[DpemanfaatanController::class, 'delete'])->name('hapus-pemanfaatan');
 
-//pengawasan
-Route::get('/Data-Pengawasan', [PengawasanController::class,'index'])->name('Data-Pengawasan');
-Route::get('/Create-Pengawasan',[PengawasanController::class,'create'])->name('Create-Pengawasan');
-Route::post('/simpan-Pengawasan',[PengawasanController::class,'store'])->name('simpan-Pengawasan');
-Route::get('/edit-pengawasan/{id}',[PengawasanController::class,'edit'])->name('edit-pengawasan');
-Route::post('/update-pengawasan/{id}',[PengawasanController::class,'update'])->name('update-pengawasan');
-Route::get('/delete-pengawasan/{id}',[PengawasanController::class,'destroy'])->name('delete-pengawasan');
+    //pengawasan
+    Route::get('/Data-Pengawasan', [PengawasanController::class,'index'])->name('Data-Pengawasan');
+    Route::get('/Create-Pengawasan',[PengawasanController::class,'create'])->name('Create-Pengawasan');
+    Route::post('/simpan-Pengawasan',[PengawasanController::class,'store'])->name('simpan-Pengawasan');
+    Route::get('/edit-pengawasan/{id}',[PengawasanController::class,'edit'])->name('edit-pengawasan');
+    Route::post('/update-pengawasan/{id}',[PengawasanController::class,'update'])->name('update-pengawasan');
+    Route::get('/delete-pengawasan/{id}',[PengawasanController::class,'destroy'])->name('delete-pengawasan');
 
 });
 
