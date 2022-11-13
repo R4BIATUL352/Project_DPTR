@@ -24,7 +24,7 @@ class CreateDpemanfaatansTable extends Migration
             $table->string('uraian');
             $table->date('tanggal_mulai');
             $table->date('tanggal_akhir');
-            $table->string('file_SK');
+            // $table->string('file_SK');
             $table->timestamps();
         });
     }

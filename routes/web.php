@@ -35,27 +35,20 @@ Route::group(['middleware' => 'web'], function () {
         return view('user');
     })->name('user');
     
-    //Register
+    // register
     Route::get('register', [RegisterController::class, 'register'])->name('register');
     Route::post('register/action', [RegisterController::class, 'actionregister'])->name('actionregister');
     
-    //menampilkan form input data pemanfaatan
+    // pemanfaatan
+    Route::get('/pemanfaatan', [DpemanfaatanController::class, 'index'])->name('pemanfaatan.index');
     Route::get('/form-dpemanfaatan', [DpemanfaatanController::class, 'create'])->name('form-dpemanfaatan');
-
-    //nampilkan data hasil inputan ke tabel
     Route::post('/simpan-dpemanfaatan', [DpemanfaatanController::class, 'store'])->name('simpan-dpemanfaatan');
-
-    //memanggil edit
     Route::get('edit-pemanfaatan/{id}',[DpemanfaatanController::class, 'edit'])->name('edit-pemanfaatan');
-
-    //memanggil update
     Route::post('/updatepemanfaatan',[DpemanfaatanController::class, 'update'])->name('updatepemanfaatan');
-
-    // memanggil hapus
     Route::get('/hapus-pemanfaatan/{id}',[DpemanfaatanController::class, 'delete'])->name('hapus-pemanfaatan');
 
-    //pengawasan
-    Route::get('/Data-Pengawasan', [PengawasanController::class,'index'])->name('Data-Pengawasan');
+    // pengawasan
+    Route::get('/pengawasan', [PengawasanController::class,'index'])->name('pengawasan.index');
     Route::get('/Create-Pengawasan',[PengawasanController::class,'create'])->name('Create-Pengawasan');
     Route::post('/simpan-Pengawasan',[PengawasanController::class,'store'])->name('simpan-Pengawasan');
     Route::get('/edit-pengawasan/{id}',[PengawasanController::class,'edit'])->name('edit-pengawasan');

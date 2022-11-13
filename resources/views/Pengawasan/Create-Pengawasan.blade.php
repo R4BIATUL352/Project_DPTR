@@ -1,43 +1,5 @@
-<!DOCTYPE html>
-<!--
-This is a starter template page. Use this page to start your new project from
-scratch. This page gets rid of all links and provides the needed markup only.
--->
-<html lang="en">
-{{-- <head>
-  @include('tamplate.head')
-</head>
-<body class="hold-transition sidebar-mini">
-<div class="wrapper">
-
-  <!-- Navbar -->
- @include('tamplate.navbar')
-  <!-- /.navbar -->
-
-  <!-- Main Sidebar Container -->
-  @include('tamplate.sidebar')
-  <!-- Content Wrapper. Contains page content --> --}}
-  <!-- CSS only -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-  <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <div class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1 class="m-0">Starter Page</h1>
-          </div><!-- /.col -->
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Data Pengawasan</li>
-            </ol>
-          </div><!-- /.col -->
-        </div><!-- /.row -->
-      </div><!-- /.container-fluid -->
-    </div>
-    <!-- /.content-header -->
-
+@extends('layout.main')
+@section('content')
         <div class="card-body">
           <form action="{{ route('simpan-Pengawasan') }}" method="POST">
             {{ csrf_field() }}
@@ -127,42 +89,4 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </form>
             </div>
         </div>
-    </div>
-</body>
-</html>
-        </div>
-      </div>
-
-    </div>
-    <!-- /.content -->
-  </div>
-  <!-- /.content-wrapper -->
-
-  <!-- Control Sidebar -->
-  {{-- <aside class="control-sidebar control-sidebar-dark"> --}}
-    <!-- Control sidebar content goes here -->
-    {{-- <div class="content">
-        <div class="card card-info card-outline">
-            <div class="card-header">
-                <div class="cart-tools">
-                    <a href="#" class="btn btn-success">
-                </div>
-            </div>
-        </div>
-    </div>
-  </aside> --}}
-  <!-- /.control-sidebar -->
-
-  <!-- Main Footer -->
-  {{-- <footer class="main-footer"> --}}
-    {{-- @include('tamplate.footer')
-  </footer></div> --}}
-<!-- ./wrapper -->
-
-<!-- REQUIRED SCRIPTS -->
-  {{-- @include('tamplate.script') --}}
-<!-- JavaScript Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-</body>
-</html>
-
+@endsection

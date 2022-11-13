@@ -17,7 +17,7 @@ class DpemanfaatanController extends Controller
     {
         //memunculksn data inputan ke tabel
         $dtpemanfaatan = dpemanfaatan::all();
-        return view('pemanfaatan.tabel', compact('dtpemanfaatan'));
+        return view('pemanfaatan.index', compact('dtpemanfaatan'));
     }
 
     // public function  DpemanfaatanExport(){
@@ -56,10 +56,10 @@ class DpemanfaatanController extends Controller
             'uraian'=>$request->uraian,
             'tanggal_mulai'=>$request->tanggal_mulai,
             'tanggal_akhir'=>$request->tanggal_akhir,
-            'file_SK'=>$request->file_SK
+            // 'file_SK'=>$request->file_SK
         ]);
 
-        return redirect('tabel');
+        return redirect()->route('pemanfaatan.index')->with('success', 'Data berhasil ditambahkan');
     }
 
     /**
@@ -113,7 +113,7 @@ class DpemanfaatanController extends Controller
                         'file_SK'=>$request->file_SK,
                     ]);
 
-                    return redirect()->route('tabel');
+                    return redirect()->route('pemanfaatan.index')->with('success', 'Data berhasil diubah');
     }
 
     /**
@@ -129,7 +129,7 @@ class DpemanfaatanController extends Controller
         $dpemanfaatan = dpemanfaatan::where('id', $id)
                     ->delete();
 
-        return redirect()->route('tabel');
+        return redirect()->route('pemanfaatan.index')->with('success', 'Data berhasil dihapus');
     }
 
     

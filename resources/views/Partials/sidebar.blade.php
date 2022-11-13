@@ -32,8 +32,8 @@
             </div>
             <ul class="sub-menu">
                 <li><a href="#" class="link_name">Tambah Dokumen</a></li>
-                <li><a href="{{route('Create-Pengawasan')}}">Pemanfaatan</a></li>
-                <li><a href="{{route('Data-Pengawasan')}}">Pengawasan</a></li>
+                <li><a href="{{route('form-dpemanfaatan')}}">Pemanfaatan</a></li>
+                <li><a href="{{route('Create-Pengawasan')}}">Pengawasan</a></li>
             </ul>
         </li>
         <li>
@@ -46,8 +46,8 @@
             </div>
             <ul class="sub-menu">
                 <li><a href="#" class="link_name">Dokumen Tersimpan</a></li>
-                <li><a href="#">Pemanfaatan</a></li>
-                <li><a href="#">Pengawasan</a></li>
+                <li><a href="{{ route('pemanfaatan.index') }}">Pemanfaatan</a></li>
+                <li><a href="{{ route('pengawasan.index') }}">Pengawasan</a></li>
             </ul>
         <li>
             <div class="profile-details">
@@ -56,18 +56,12 @@
                 </div>
                 <div class="name-job">
                     <div class="profile_name">Kelompok DPTR</div>
-                    <div class="job">Elsa, Sopi, Ratu, Trisa</div>
+                    <div class="job">Elsa, Sopi, Ratu, Trisa, Rabih</div>
                 </div>
                 <i class='bx bx-log-out'></i>
             </div>
         </li>
     </ul>
 </div>
-<section class="home-section">
-    <div class="home-content">
-        <i class='bx bx-menu'></i>
-        <span class="text">Dashboard</span>
-    </div>
-</section>
 
 <script src="{{asset('java/script.js')}}"></script>

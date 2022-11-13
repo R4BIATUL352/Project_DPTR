@@ -15,9 +15,9 @@ class PengawasanController extends Controller
     public function index()
     {
         //
-        //   return view('Pengawasan.Data-Pengawasan');
+        //   return view('Pengawasan.pengawasan.index');
           $dtpengawasan = pengawasan::all();
-          return view('Pengawasan.Data-Pengawasan', compact('dtpengawasan'));
+          return view('pengawasan.index', compact('dtpengawasan'));
     }
 
     /**
@@ -63,7 +63,7 @@ class PengawasanController extends Controller
             'kesesuaian'=>$request->kesesuaian
         ]);
 
-        return redirect('Data-Pengawasan');
+        return redirect()->route('pengawasan.index');
 
     }
 
@@ -126,7 +126,7 @@ class PengawasanController extends Controller
                             'tdklanjut'=>$request->tdklanjut,
                             'kesesuaian'=>$request->kesesuaian,
                         ]);
-                        return redirect()->route('Data-Pengawasan');
+                        return redirect()->route('pengawasan.index');
     }
 
     /**
@@ -141,7 +141,7 @@ class PengawasanController extends Controller
             $Pengawasan = Pengawasan::where('id', $id)
                   ->delete();
     
-            return redirect()->route('Data-Pengawasan');
+            return redirect()->route('pengawasan.index');
     }
     }
 }

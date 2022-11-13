@@ -1,5 +1,9 @@
 @extends('layout.main')
 
 @section('content')
-    Daftar Anime
+    <div>
+        <h1><3</h1>
+
+
+    </div>
 @endsection

@@ -1,23 +1,6 @@
+@extends('layout.main')
 
-<!DOCTYPE html>
-<!--
-This is a starter template page. Use this page to start your new project from
-scratch. This page gets rid of all links and provides the needed markup only.
--->
-<html lang="en">
-  <head>
-  @include('tamplate.head')
-  </head>
-<body class="hold-transition sidebar-mini">
-<div class="wrapper">
-
-  <!-- Navbar -->
- @include('tamplate.navbar')
-  <!-- /.navbar -->
-
-  <!-- Main Sidebar Container -->
- @include('tamplate.sidebar')
-
+@section('content')
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -96,18 +79,4 @@ scratch. This page gets rid of all links and provides the needed markup only.
     </div>
     <!-- /.content -->
   </div>
-  <!-- /.content-wrapper -->
-
-  <!-- Main Footer -->
-  <footer class="main-footer">
-    @include('tamplate.footer')
-   </footer>
-</div>
-<!-- ./wrapper -->
-
-<!-- REQUIRED SCRIPTS -->
-
-<!-- jQuery -->
-@include('tamplate.script')
-</body>
-</html>
+@endsection

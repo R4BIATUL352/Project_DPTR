@@ -1,33 +1,6 @@
-
-<!DOCTYPE html>
-<!--
-This is a starter template page. Use this page to start your new project from
-scratch. This page gets rid of all links and provides the needed markup only.
--->
-<html lang="en">
-<!-- CSS only -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <div class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1 class="m-0">Pengawasan</h1>
-          </div><!-- /.col -->
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href={{route('home')}}>Home</a></li>
-              <li class="breadcrumb-item active">Starter Page</li>
-            </ol>
-          </div><!-- /.col -->
-        </div><!-- /.row -->
-      </div><!-- /.container-fluid -->
-    </div>
-    <!-- /.content-header -->
-    <!-- Main content -->
-    <div class="content">
+@extends('layout.main')
+@section('content')
+<div class="content">
         <div class="card card-info card-outline ">
             <div class="card-header">
                 <div class="card-tools">
@@ -96,21 +69,4 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </div>
         </div> 
     </div>
-    <!-- /.content -->
-  </div>
-  <!-- /.content-wrapper -->
-<!-- JavaScript Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-  <!-- Main Footer -->
-  {{-- <footer class="main-footer">
-    @include('tamplate.footer')
-   </footer>
-</div> --}}
-<!-- ./wrapper -->
-
-<!-- REQUIRED SCRIPTS -->
-
-<!-- jQuery -->
-{{-- @include('tamplate.script') --}}
-</body>
-</html>
+@endsection
