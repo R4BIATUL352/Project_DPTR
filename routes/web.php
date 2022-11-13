@@ -1,8 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\pengawasanController;
-use App\Http\Controllers\pemanfaatanController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\PengawasanController;
+use App\Http\Controllers\DpemanfaatanController;
+use PhpOffice\PhpSpreadsheet\Calculation\MathTrig\Round;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,10 +20,51 @@ use App\Http\Controllers\pemanfaatanController;
 |
 */
 
-Route::get('/', function () {
-    return view('sidebar');
+Route::group(['middleware' => 'web'], function () {
+    // Route::auth();
+
+    //Login
+    Route::get('/', [LoginController::class, 'login'])->name('login');
+    Route::post('actionlogin', [LoginController::class, 'actionlogin'])->name('actionlogin');
+
+    //Home
+    Route::get('home', [HomeController::class, 'index'])->name('home');
+    Route::post('actionlogout', [LoginController::class, 'actionlogout'])->name('actionlogout');
+    
+    Route::get('user', function () {
+        return view('user');
+    })->name('user');
+    
+    //Register
+    Route::get('register', [RegisterController::class, 'register'])->name('register');
+    Route::post('register/action', [RegisterController::class, 'actionregister'])->name('actionregister');
+    
+    //menampilkan form input data pemanfaatan
+Route::get('/form-dpemanfaatan', [DpemanfaatanController::class, 'create'])->name('form-dpemanfaatan');
+
+//nampilkan data hasil inputan ke tabel
+Route::post('/simpan-dpemanfaatan', [DpemanfaatanController::class, 'store'])->name('simpan-dpemanfaatan');
+
+//memanggil edit
+Route::get('edit-pemanfaatan/{id}',[DpemanfaatanController::class, 'edit'])->name('edit-pemanfaatan');
+
+//memanggil update
+Route::post('/updatepemanfaatan',[DpemanfaatanController::class, 'update'])->name('updatepemanfaatan');
+
+// memanggil hapus
+Route::get('/hapus-pemanfaatan/{id}',[DpemanfaatanController::class, 'delete'])->name('hapus-pemanfaatan');
+
+//pengawasan
+Route::get('/Data-Pengawasan', [PengawasanController::class,'index'])->name('Data-Pengawasan');
+Route::get('/Create-Pengawasan',[PengawasanController::class,'create'])->name('Create-Pengawasan');
+Route::post('/simpan-Pengawasan',[PengawasanController::class,'store'])->name('simpan-Pengawasan');
+Route::get('/edit-pengawasan/{id}',[PengawasanController::class,'edit'])->name('edit-pengawasan');
+Route::post('/update-pengawasan/{id}',[PengawasanController::class,'update'])->name('update-pengawasan');
+Route::get('/delete-pengawasan/{id}',[PengawasanController::class,'destroy'])->name('delete-pengawasan');
+
 });
 
-Route::get('pengawasan', [pengawasanController::class, 'pengawasan'])->name('pengawasan');
+// Route::get('/', function () {
+//     return view('sidebar');
+// });
 
-Route::get('pemanfaatan', [pemanfaatanController::class, 'pemanfaatan'])->name('pemanfaatan');

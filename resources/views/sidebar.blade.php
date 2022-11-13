@@ -1,4 +1,4 @@
-{{-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
  
 <head>
@@ -46,8 +46,8 @@
                 </div>
                 <ul class="sub-menu">
                     <li><a href="#" class="link_name">Tambah Dokumen</a></li>
-                    <li><a href="{{route('pemanfaatan')}}">Pemanfaatan</a></li>
-                    <li><a href="{{route('pengawasan')}}">Pengawasan</a></li>
+                    <li><a href="{{route('form-dpemanfaatan')}}">Pemanfaatan</a></li>
+                    <li><a href="{{route('Data-Pengawasan')}}">Pengawasan</a></li>
                 </ul>
             </li>
             <li>
@@ -87,4 +87,4 @@
     <script src="{{asset('java/script.js')}}"></script>
 </body>
  
-</html> --}}
+</html>
